@@ -29,7 +29,9 @@ pipeline {
                         )
                     ]
                 ){
-                sh "docker image tag notes-app-jenkins:latest ${env.dockerHubUser}/notes-app-jenkins:latest"
+                echo "Aaj toh linldn post bantha hey boss"
+                sh "docker image tag notes-app-jenkins:latest ${env.dockerHubUser}/notes-app-jenkins:v1"
+                
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
                 sh "docker push ${env.dockerHubUser}/notes-app-jenkins:latest"
                 }
